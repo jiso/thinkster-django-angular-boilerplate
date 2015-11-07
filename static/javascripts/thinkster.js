@@ -5,7 +5,8 @@
         .module('thinkster', [
             'thinkster.config',
             'thinkster.routes',
-            'thinkster.authentication'
+            'thinkster.authentication',
+            'thinkster.layout'
         ])
         .run(run);
         
@@ -22,7 +23,7 @@
     * @desc Update xsrf $http headers to align with Django's defaults
     */
     function run($http) {
-        $http.defaults.xsrfHeaderName = 'X-CRSFToken';
-        $http.defaults.xsrfCookieName = 'crsftoken'
+        $http.defaults.xsrfHeaderName = 'X-CSRFToken';
+        $http.defaults.xsrfCookieName = 'csrftoken'
     }
 })();
